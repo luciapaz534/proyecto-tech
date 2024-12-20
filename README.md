@@ -22,3 +22,5 @@ La página incluye una barra de navegación con enlaces internos para facilitar 
 - **Estilos Responsivos**: Flexbox y Grid se han utilizado en las secciones de productos, reseñas y contacto, para lograr un diseño adaptado a dispositivos móviles y de escritorio.
 - **Widgets de Redes Sociales**: Incluye un widget de WhatsApp para contacto directo.
 - **Formulario Funcional**: Con integración a Formspree, el formulario de contacto permite una comunicación rápida y directa con los visitantes de la página.
+
+Link del sitio web: https://luciapaz534.github.io/proyecto-tech/
