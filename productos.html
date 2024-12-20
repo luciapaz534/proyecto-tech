@@ -36,7 +36,7 @@
 
     <script>
         // JSON de productos: función para cargar los productos
-        fetch('productos.json')  // Asegúrate de que el archivo JSON esté en la misma carpeta o especifica la ruta correcta.
+        fetch('productos.json')  // 
             .then(response => response.json())  // Convierte la respuesta en un objeto JavaScript
             .then(data => {
                 const productosContainer = document.getElementById('lista-productos');
@@ -110,7 +110,7 @@ function agregarAlCarrito(event) {
     // Guardar el carrito actualizado en el localStorage
     localStorage.setItem('carrito', JSON.stringify(carrito));
 
-    // Opcional: Mostrar un mensaje de confirmación
+    // Mostrar un mensaje de confirmación
     alert('Producto agregado al carrito');
 }
     </script>
