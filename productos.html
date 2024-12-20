@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Productos - Betfaif Muebles</title>
+</head>
+<body>
+    <header>
+		<div class="logo-container">
+			<img src="images/logo.jpg" alt="Logo" class="logo">
+			<h1>Tu Carrito de Compras</h1>
+		</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="carrito.html">Carrito</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="productos">
+            <h2>Nuestros Productos</h2>
+            <div id="lista-productos" class="productos-container"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Pazau Muebles. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // JSON de productos: función para cargar los productos
+        fetch('productos.json')  // Asegúrate de que el archivo JSON esté en la misma carpeta o especifica la ruta correcta.
+            .then(response => response.json())  // Convierte la respuesta en un objeto JavaScript
+            .then(data => {
+                const productosContainer = document.getElementById('lista-productos');
+                
+                // Verifica que 'data' no esté vacío
+                if (data && data.length > 0) {
+                    data.forEach(producto => {
+                        // Crear un elemento para cada producto
+                        const productoDiv = document.createElement('div');
+                        productoDiv.classList.add('producto');
+                        
+                        // Crear el contenido del producto
+                        productoDiv.innerHTML = `
+                            <img src="${producto.imagen}" alt="${producto.nombre}" class="producto-imagen">
+                            <h3>${producto.nombre}</h3>
+                            <p>${producto.descripcion}</p>
+                            <p><strong>$${producto.precio}</strong></p>
+                            <button class="agregar-carrito" data-id="${producto.id}" data-nombre="${producto.nombre}" data-precio="${producto.precio}" data-imagen="${producto.imagen}">Agregar al carrito</button>
+                        `;
+
+                        // Agregar el producto al contenedor
+                        productosContainer.appendChild(productoDiv);
+                    });
+
+                    // Agregar event listener a los botones "Agregar al carrito"
+                    const botonesAgregar = document.querySelectorAll('.agregar-carrito');
+                    botonesAgregar.forEach(boton => {
+                        boton.addEventListener('click', agregarAlCarrito);
+                    });
+                } else {
+                    // Si no hay productos, muestra un mensaje
+                    productosContainer.innerHTML = '<p>No se encontraron productos.</p>';
+                }
+            })
+            .catch(error => {
+                console.error('Error al cargar los productos:', error);
+                const productosContainer = document.getElementById('lista-productos');
+                productosContainer.innerHTML = '<p>Hubo un error al cargar los productos. Intenta más tarde.</p>';
+            });
+// Función para agregar productos al carrito
+function agregarAlCarrito(event) {
+    const boton = event.target;
+    const id = boton.getAttribute('data-id');
+    const nombre = boton.getAttribute('data-nombre');
+    const precio = parseFloat(boton.getAttribute('data-precio'));  // Asegúrate de que el precio sea un número
+    const imagen = boton.getAttribute('data-imagen');
+
+    // Crear el objeto del producto
+    const producto = {
+        id,
+        nombre,
+        precio,
+        imagen,
+        cantidad: 1  
+    };
+
+    // Obtener el carrito actual del localStorage 
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+    // Verificar si el producto ya está en el carrito
+    const productoExistente = carrito.find(item => item.id === id);
+
+    if (productoExistente) {
+        // Si el producto ya está en el carrito, aumentar la cantidad
+        productoExistente.cantidad += 1;
+    } else {
+        // Si el producto no está en el carrito, agregarlo con cantidad 1
+        carrito.push(producto);
+    }
+
+    // Guardar el carrito actualizado en el localStorage
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+
+    // Opcional: Mostrar un mensaje de confirmación
+    alert('Producto agregado al carrito');
+}
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,238 @@
+/* styles.css */
+
+/* Estilos generales */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #f0e5e5;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    line-height: 1.6; /* Mejora la legibilidad */
+}
+
+header {
+    background-color: #d6430e; /* Color profesional */
+    color: #fff;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffd700; /* Cambio de color más visible */
+}
+
+main {
+    padding: 2rem;
+    background-image: url('images/fondo-madera.jpg'); /* Fondo */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Sección de productos */
+.producto-imagen {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; /* Espaciado uniforme entre tarjetas */
+    justify-content: center;
+    background-color: #fff; /* Fondo claro */
+    padding: 2rem;
+    border-radius: 8px;
+}
+.producto-imagen {
+    background: #e6f7ff;
+    color: #0c0101;
+    margin: 0.5rem;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: calc(33.33% - 1rem); /* 3 tarjetas por fila */
+    max-width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.producto-imagen:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.producto-imagen img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.producto-imagen label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.producto-imagen input[type="number"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.agregar {
+    display: block;
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+    background-color: #e67e22;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.producto-imagen:hover {
+    background-color: #d35400;
+}
+
+/* Reseñas */
+.reseña-card {
+    background: #fff;
+    color: #333;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 1rem 0;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+}
+.reseña-card:hover {
+    transform: scale(1.05); /* Aumenta el tamaño de la reseña en un 5% */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Resalta con una sombra más pronunciada */
+}
+
+.estrellas {
+    color: gold;
+    margin-right: 0.5rem;
+}
+
+.cara-cliente {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: auto;
+}
+
+/* Formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+}
+
+label {
+    margin: 0.5rem 0;
+}
+
+input, textarea {
+    padding: 0.7rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 0.7rem;
+    background-color: #e67e22;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #d35400;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    #sect-productos {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%; /* Ocupará casi todo el ancho en pantallas pequeñas */
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        font-size: 1.2rem; /* Ajustar tamaño del texto */
+    }
+
+    .agregar {
+        padding: 0.5rem;
+    }
+
+    form {
+        padding: 1rem;
+    }
+
+    input, textarea {
+        font-size: 0.9rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+    }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #d6430e;
+    color: #fff;
+}
+
+/* WhatsApp Widget */
+#whatsapp-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+#whatsapp-widget img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}

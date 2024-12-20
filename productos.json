@@ -1,0 +1,43 @@
+[
+    {
+      "id": 1,
+      "nombre": "Sofá Modular",
+      "descripcion": "Sofá modular de 3 piezas, tapizado en tela antimanchas. Ideal para salas modernas.",
+      "imagen": "images/sofa_modular.png",
+      "precio": 25000,
+      "cantidad": 0
+    },
+    {
+      "id": 2,
+      "nombre": "Mesa de Comedor de Madera",
+      "descripcion": "Mesa de comedor rectangular de madera maciza, para 6 personas. Acabado en nogal.",
+      "imagen": "images/mesa_comedor.png",
+      "precio": 15000,
+      "cantidad": 0
+    },
+    {
+      "id": 3,
+      "nombre": "Silla de Oficina Ergonómica",
+      "descripcion": "Silla de oficina con respaldo ergonómico y ajuste de altura, ideal para largas jornadas de trabajo.",
+      "imagen": "images/silla_oficina.png",
+      "precio": 6000,
+      "cantidad": 0
+    },
+    {
+      "id": 4,
+      "nombre": "Estantería de Pared",
+      "descripcion": "Estantería flotante de madera para decoración o almacenamiento. Fácil de instalar.",
+      "imagen": "images/estanteria_pared.png",
+      "precio": 4000,
+      "cantidad": 0
+    },
+    {
+      "id": 5,
+      "nombre": "Cama King Size",
+      "descripcion": "Cama King Size con colchón ortopédico, estructura de madera resistente y cabecera acolchonada.",
+      "imagen": "images/cama_king.png",
+      "precio": 35000,
+      "cantidad": 0
+    }
+  ]
+  
